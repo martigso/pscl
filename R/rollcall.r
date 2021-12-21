@@ -612,12 +612,12 @@ print.summary.rollcall <- function(x, digits=1, ...){
     print(x$lopSided)
   }
 
-  if(!verbose)
+  if(verbose == FALSE)
     cat(paste("\nUse summary(",
               rcObjName,
               ",verbose=TRUE) for more detailed information.\n",sep=""))
   
-  if(verbose){
+  if(verbose == TRUE){
     if(!is.null(x$partyLoyalty)){
       cat("\nSummary By Legislator: Counts, Percentages and Party Loyalty\n")
       foo <- cbind(round(x$legisTab,digits),
